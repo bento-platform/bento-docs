@@ -1,4 +1,4 @@
-site_name: "Bento Documentation -- Dev"
+site_name: "Bento Documentation"
 site_dir: "build"
 
 site_url: https://bento-platform.github.io/bento-docs/
@@ -6,6 +6,13 @@ repo_url: https://github.com/bento-platform/bento-docs
 
 theme:
   name: "material"
+  logo: "assets/logo.png"
+  favicon: "assets/favicon.ico"
+  palette:
+    primary: custom
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - mike:
@@ -16,3 +23,4 @@ plugins:
       version_selector: true
       css_dir: css
       javascript_dir: js
+  - search:
