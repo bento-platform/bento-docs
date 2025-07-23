@@ -1,0 +1,1844 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bento-platform.github.io/bento-docs/developer-docs/installation/">
+      
+      
+        <link rel="prev" href="../development/">
+      
+      
+        <link rel="next" href="../json-schemas/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Installation - Bento Documentation -- Dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bento Documentation -- Dev" class="md-header__button md-logo" aria-label="Bento Documentation -- Dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bento Documentation -- Dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bento-platform/bento-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bento Documentation -- Dev" class="md-nav__button md-logo" aria-label="Bento Documentation -- Dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bento Documentation -- Dev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bento-platform/bento-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding services to Bento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bentoctl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    bentoctl: the Bento deployment command line management tool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Bento with Dev-containers in VS Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-up-bentoctl" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set up bentoctl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-provision-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Provision configuration files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Provision configuration files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-specific-environment-variable-file-localenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instance-specific environment variable file: local.env
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instance-specific environment variable file: local.env">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bento-public-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bento Public configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beacon-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beacon configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gohan-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gohan configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gohan configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-jvm-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elasticsearch JVM options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-development-only-create-self-signed-tls-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Development only: create self-signed TLS certificates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-development-only-hosts-file-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Development only: Hosts file configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-initialize-and-boot-the-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Initialize and boot the gateway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Initialize and boot the gateway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note-on-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note on Keycloak
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configure-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Configure permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Configure permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-create-superuser-permissions-in-the-bento-authorization-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Create superuser permissions in the Bento authorization service
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-create-grants-for-the-workflow-execution-service-wes-oauth2-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Create grants for the Workflow Execution Service (WES) OAuth2 client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-create-a-grant-for-the-aggregation-and-beacon-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Create a grant for the aggregation and Beacon services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-configure-public-data-access-for-all-users-including-anonymous-visitors-if-desired" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. Configure public data access for all users, including anonymous visitors (if desired):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-assign-portal-access-to-all-users-in-the-instance-realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      e. Assign portal access to all users in the instance realm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-production-only-set-up-translations-and-branding" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Production only: set up translations and branding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-start-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Start the cluster
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Start the cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stopping-and-cleaning-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopping and cleaning the cluster
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ingest-reference-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Ingest reference material
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Ingest reference material">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-gohans-gene-catalogue-legacy-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Up Gohan's Gene Catalogue (Legacy instructions)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Schemas for data types and discovery configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento MinIO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phenopackets_v1_to_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Converting Phenopackets from V1 to V2 using bentoctl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../public_discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Public data discovery configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference_material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guide to genomic reference material in Bento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reverse-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento behind a proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting Bento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Migration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            Migration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v14
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_15_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_15_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v16
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v17
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_17_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v17.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v18
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v19
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_2_11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to BentoV2 2.11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-up-bentoctl" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set up bentoctl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-provision-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Provision configuration files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Provision configuration files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance-specific-environment-variable-file-localenv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instance-specific environment variable file: local.env
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instance-specific environment variable file: local.env">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bento-public-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bento Public configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beacon-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beacon configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gohan-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gohan configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gohan configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-jvm-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elasticsearch JVM options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-development-only-create-self-signed-tls-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Development only: create self-signed TLS certificates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-development-only-hosts-file-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Development only: Hosts file configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-initialize-and-boot-the-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Initialize and boot the gateway
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Initialize and boot the gateway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note-on-keycloak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note on Keycloak
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configure-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Configure permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Configure permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-create-superuser-permissions-in-the-bento-authorization-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Create superuser permissions in the Bento authorization service
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-create-grants-for-the-workflow-execution-service-wes-oauth2-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Create grants for the Workflow Execution Service (WES) OAuth2 client
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-create-a-grant-for-the-aggregation-and-beacon-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Create a grant for the aggregation and Beacon services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-configure-public-data-access-for-all-users-including-anonymous-visitors-if-desired" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. Configure public data access for all users, including anonymous visitors (if desired):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-assign-portal-access-to-all-users-in-the-instance-realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      e. Assign portal access to all users in the instance realm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-production-only-set-up-translations-and-branding" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Production only: set up translations and branding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-start-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Start the cluster
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Start the cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stopping-and-cleaning-the-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stopping and cleaning the cluster
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-ingest-reference-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Ingest reference material
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Ingest reference material">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-gohans-gene-catalogue-legacy-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Up Gohan's Gene Catalogue (Legacy instructions)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="installation">Installation</h1>
+<h2 id="1-set-up-bentoctl">1. Set up <code>bentoctl</code></h2>
+<p>See the following guide: <a href="../bentoctl/"><code>bentoctl</code>: the Bento deployment command line management tool</a></p>
+<p>Before running any installation steps, make sure you've set up <code>bentoctl</code> and have activated its
+virtual environment.</p>
+<h2 id="2-provision-configuration-files">2. Provision configuration files</h2>
+<h3 id="instance-specific-environment-variable-file-localenv">Instance-specific environment variable file: <code>local.env</code></h3>
+<p>Depending on your use, development or deployment, you will need to copy the right template file
+to <code>local.env</code> in the root of the <code>bento</code> folder, i.e., the repository folder:</p>
+<pre><code class="language-bash"># Dev
+cp ./etc/bento_dev.env local.env
+
+# Deployment
+cp ./etc/bento_deploy.env local.env
+</code></pre>
+<p>Then, modify the values as needed; depending on if you're using the instance for development or deployment.</p>
+<h4 id="development-example">Development example</h4>
+<p>For an example of a semi-completed development configuration, see <code>etc/bento_dev.env</code>.
+In the step above, this file was copied to <code>local.env</code>, and <strong>you must now edit <code>local.env</code> to specify secrets and other
+deployment-specific values.</strong></p>
+<p>You should at least fill to the following settings in dev mode (it may differ for a production setup), which are not set
+in the example file:</p>
+<ul>
+<li><code>BENTOV2_SESSION_SECRET</code></li>
+<li><code>BENTO_AUTH_DB_PASSWORD</code></li>
+<li><code>BENTO_AUTHZ_DB_PASSWORD</code></li>
+<li><code>BENTO_AGGREGATION_CLIENT_SECRET</code></li>
+<li><code>BENTO_WES_CLIENT_SECRET</code></li>
+</ul>
+<p>If the internal OIDC identity provider (IdP) is being used (by default, Keycloak), variables specifying default
+credentials should also be provided. The <em>admin</em> credentials are used to connect to the Keycloak UI for authentication
+management (adding users, getting client credentials, ...). The <em>test</em> credentials will be used to authenticate on the
+Bento Portal.</p>
+<pre><code class="language-bash">BENTOV2_AUTH_ADMIN_USER=testadmin
+BENTOV2_AUTH_ADMIN_PASSWORD=testpassword123
+
+BENTOV2_AUTH_TEST_USER=testuser
+BENTOV2_AUTH_TEST_PASSWORD=testpassword123
+</code></pre>
+<p>If using an <em>external</em> identity provider, adjust the following auth variables according to the external IdP's
+specifications:</p>
+<pre><code class="language-bash">BENTOV2_AUTH_CLIENT_ID=local_bentov2
+BENTOV2_AUTH_REALM=bentov2
+
+BENTOV2_AUTH_WELLKNOWN_PATH=/auth/realms/${BENTOV2_AUTH_REALM}/.well-known/openid-configuration
+</code></pre>
+<p>If an <em>external</em> Keycloak instance is being used and you would like to set it up using <code>./bentoctl.bash init-auth</code>, follow the steps above for external IdPs and then below:</p>
+<ul>
+<li>Set up a keycloak instance and provide its URL in <code>BENTOV2_AUTH_PUBLIC_URL</code></li>
+<li>Make the desired Bento realm and update <code>BENTOV2_AUTH_REALM</code> accordingly</li>
+<li>Create an administrative user account in the Bento realm</li>
+<li>In <em>Realm Roles</em>, create an admin role, which we will give to the administrative user later</li>
+<li>In the admin role, go to the associated roles tab and assign all the <strong>realm-management</strong> roles to the admin realm role.</li>
+<li>In the admin user page, select the <em>Role Mapping</em> tab and click on the <em>Assign Role</em> button</li>
+<li>Select <em>Filter By Realm Roles</em>, select the admin role and click <em>Assign</em></li>
+<li>The user account can then be used to remotely configure the realm with the admin API</li>
+<li>Set the credential variables in <code>local.env</code></li>
+<li>To provide credentials during <code>init-auth</code> (<strong>recommended</strong>)<ul>
+<li><code>BENTOV2_AUTH_ADMIN_USER=''</code> &amp; <code>BENTOV2_AUTH_ADMIN_PASSWORD=''</code></li>
+<li>You will then be prompted to provide the credentials</li>
+</ul>
+</li>
+<li>To store the credentials in an environment variable<ul>
+<li><code>BENTOV2_AUTH_ADMIN_USER=&lt;admin username&gt;</code> &amp; <code>BENTOV2_AUTH_ADMIN_PASSWORD=&lt;admin password&gt;</code></li>
+</ul>
+</li>
+<li>Set <code>BENTOV2_USE_EXTERNAL_KEYCLOAK=1</code> in <code>local.env</code></li>
+<li>Run <code>./bentoctl.bash init-auth</code></li>
+</ul>
+<blockquote>
+<p>This administrative user account should only be used to configure a Keycloak realm for a Bento instance.
+As such, once your Bento instance is properly configured with your remote Keycloak, we recommend that you unassign the admin realm role from the admin user and reset credentials. Doing so mitigates the potential security risks caused by leaked admin credentials.</p>
+<p>If you need to re-run <code>bentoctl init-auth</code> later, you can set new credentials and reassign the admin role for the configuration process.</p>
+<p><code>bentoctl init-auth</code> would skip test user creation. Test users can be created using the admin console for the external keycloak.</p>
+</blockquote>
+<h3 id="bento-public-configuration">Bento Public configuration</h3>
+<p>Then, copy the <code>bento_public</code> configuration file to its correct location for use by Katsu,
+Bento's clinical/phenotypic metadata service:</p>
+<pre><code class="language-bash"># public service configuration file. Required if BENTOV2_USE_BENTO_PUBLIC flag is set to `1`
+# See Katsu documentation for more information about the specifications
+./bentoctl.bash init-config katsu
+</code></pre>
+<h3 id="beacon-configuration">Beacon configuration</h3>
+<p>If using Beacon, first copy the configuration file:</p>
+<pre><code class="language-bash">./bentoctl.bash init-config beacon
+</code></pre>
+<p>Then update any config values as needed at <code>lib/beacon/config/beacon_config.json</code>
+and <code>lib/beacon/config/beacon_cohort.json</code>.</p>
+<p>If using the Beacon network, copy the configuration file:</p>
+<pre><code class="language-bash">./bentoctl.bash init-config beacon-network
+</code></pre>
+<p>and update values at <code>lib/beacon/config/beacon_network_config.json</code>.</p>
+<h3 id="gohan-configuration">Gohan configuration</h3>
+<h4 id="production">Production</h4>
+<p>When deploying a Bento node that needs to serve variants data, it is recommended to allot larger portions of your
+compute resources to both <code>bentov2-gohan-api</code> and <code>bentov2-gohan-elasticsearch</code>.
+Since variants are stored in memory in Elasticsearch, set the <code>BENTOV2_GOHAN_ES_MEM_LIM</code> variable to an
+appropriate value.</p>
+<p>Alloting additional CPUs with <code>BENTOV2_GOHAN_API_CPUS</code> and <code>BENTOV2_GOHAN_ES_CPUS</code> will result in shorter ingestion
+times. Consider this option if you need to ingest a large number of VCFs.</p>
+<p>Go through the official Elasticsearch
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-prod-prerequisites">checklist</a>
+for production deployments on Docker.</p>
+<p>The following configurations <strong>MUST</strong> be applied to the host machine deploying the Elasticsearch container:</p>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_set_vm_max_map_count_to_at_least_262144">Set <code>vm.max_map_count</code></a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration-memory.html#swappiness">Disable swapping</a></li>
+</ul>
+<h4 id="elasticsearch-jvm-options">Elasticsearch JVM options</h4>
+<p>In <strong>production</strong>, using the default JVM options provided by Elasticsearch is <strong>recommended</strong>.</p>
+<p>In <strong>development</strong>, modifying the JVM heap size could be needed if Elasticsearch's memory limit
+is low and you are trying to ingest VCFs.
+The heap size can be modified by providing a config file to the <code>bentov2_gohan-elasticsearch</code> container:</p>
+<pre><code class="language-bash">cp ./etc/default.gohan.es.jvm.options ./lib/gohan/es_jvm_options/jvm.options
+</code></pre>
+<p>Set <code>Xms</code> and <code>Xmx</code> to no more than 50% of the <code>BENTOV2_GOHAN_ES_MEM_LIM</code> value.
+For more details, check the official Elasticsearch doc on
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/advanced-configuration.html#set-jvm-heap-size">heap size</a>.</p>
+<h2 id="3-development-only-create-self-signed-tls-certificates">3. <em>Development only:</em> create self-signed TLS certificates</h2>
+<p>First, set up your local Bento and Keycloak hostnames (something like <code>bentov2.local</code>, <code>portal.bentov2.local</code>, and
+<code>bentov2auth.local</code>) in the <code>.env</code> file. You can then create the corresponding TLS certificates for local development.</p>
+<p>Setting up the certificates with <code>bentoctl</code> can be done in a single command.
+From the project root, run</p>
+<pre><code class="language-bash">./bentoctl.bash init-certs
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> This command will skip all certificate generation if it detects previously created files.
+To force an override, simply add the option <code>--force</code> / <code>-f</code>.</p>
+</blockquote>
+<p>After creating the three certificates, it is worth ensuring your browser has security exceptions for these
+certificates and domains. Navigate to each of the three domains mentioned above and add security exceptions
+to ensure cross-origin requests will occur correctly.</p>
+<h2 id="4-development-only-hosts-file-configuration">4. <em>Development only:</em> Hosts file configuration</h2>
+<p>Ensure that the local domain names are set in the machines <code>hosts</code> file (for Linux users, this is likely
+<code>/etc/hosts</code>, and in Windows, <code>C:\Windows\System32\drivers\etc\hosts</code>) pointing to either <code>localhost</code>, <code>127.0.0.1</code>,
+or <code>0.0.0.0</code>, depending on whichever gets the job done on your system.</p>
+<p>With the default development configuration, this might look something like:</p>
+<pre><code># ... system stuff above
+127.0.0.1   bentov2.local
+127.0.0.1   portal.bentov2.local
+127.0.0.1   bentov2auth.local
+# ... other stuff below
+</code></pre>
+<p>If you are working with cBioPortal, you will need another line:</p>
+<pre><code># ...
+127.0.0.1   cbioportal.bentov2.local
+# ...
+</code></pre>
+<p>Editing <code>/etc/hosts</code> is <strong>not needed</strong> in production, since the domains should have DNS records.</p>
+<p>Make sure these values match the values in the <code>.env</code> file and what was issued in the self-signed certificates, as
+specified in the step above.</p>
+<h2 id="5-initialize-and-boot-the-gateway">5. Initialize and boot the gateway</h2>
+<blockquote>
+<p>NOTE: <code>./bentoctl.bash</code> commands seen here aren't the only tools for operating this cluster.
+Run <code>./bentoctl.bash --help</code> for further documentation.</p>
+</blockquote>
+<pre><code class="language-bash"># Once the certificates are ready, initialize various aspects of the cluster:
+./bentoctl.bash init-all
+# Which is equivalent to:
+
+#   # Once the certificates are ready, initialize the cluster configs secrets
+#   ./bentoctl.bash init-dirs
+#   ./bentoctl.bash init-docker
+#   ./bentoctl.bash init-secrets
+#
+#   # Initialize bento_web and bento_public
+#   ./bentoctl.bash init-web private
+#   ./bentoctl.bash init-web public
+
+# If you are running the bentoV2 with the use of an internal identity provider (defaults to Keycloak),
+# i.e setting BENTOV2_USE_EXTERNAL_IDP=0, run both
+./bentoctl.bash run auth
+./bentoctl.bash run gateway
+# and
+./bentoctl.bash init-auth
+</code></pre>
+<p>After running <code>init-auth</code>, be sure to put all client secrets into your <code>local.env</code> file!</p>
+<p><strong>If using an external identity provider</strong>, only start the cluster's gateway after setting various <code>*_CLIENT_SECRET</code>
+variables in your local environment file:</p>
+<pre><code class="language-bash">./bentoctl.bash run gateway
+</code></pre>
+<h3 id="note-on-keycloak">Note on Keycloak</h3>
+<p>This last step boots and configures the local OIDC provider (<strong>Keycloak</strong>) container and reconfigures the gateway to
+utilize new variables generated during the OIDC configuration.</p>
+<blockquote>
+<p>NOTE: by default, the <code>gateway</code> service <em>does</em> need to be running for this to work as the configuration will pass via
+the URL set in the <code>.env</code> file which points to the gateway.</p>
+<p>If you do not plan to use the built-in OIDC provider, you will have to handle auth configuration manually.</p>
+</blockquote>
+<h2 id="6-configure-permissions">6. Configure permissions</h2>
+<h3 id="a-create-superuser-permissions-in-the-bento-authorization-service">a. Create superuser permissions in the Bento authorization service</h3>
+<p>First, run the authorization service and then open a shell into the container:</p>
+<pre><code class="language-bash">./bentoctl.bash run authz
+./bentoctl.bash shell authz
+</code></pre>
+<p>Then, run the following command for each user ID you wish to assign superuser permissions to:</p>
+<pre><code class="language-bash">bento_authz assign-all-to-user iss sub
+</code></pre>
+<p>Where <code>iss</code> is the issuer (for example, <code>https://bentov2auth.local/realms/bentov2</code>) and <code>sub</code> is the user (subject) ID,
+which in Keycloak should be a UUID.</p>
+<h3 id="b-create-grants-for-the-workflow-execution-service-wes-oauth2-client">b. Create grants for the Workflow Execution Service (WES) OAuth2 client</h3>
+<p>Run the following commands to set up authorization for the WES client.
+<strong>Don't forget to replace <code>&lt;ISSUER_HERE&gt;</code> with the issuer URL!</strong></p>
+<pre><code class="language-bash"># This grant is a temporary hack to get permissions working for v12/v13. In the future, it should be removed.
+bento_authz create grant \
+  '{&quot;iss&quot;: &quot;&lt;ISSUER_HERE&gt;&quot;, &quot;client&quot;: &quot;wes&quot;}' \
+  '{&quot;everything&quot;: true}' \
+  'view:private_portal'
+
+# This grant gives permission to access and ingest data into all projects and the reference genome service
+bento_authz create grant \
+  '{&quot;iss&quot;: &quot;&lt;ISSUER_HERE&gt;&quot;, &quot;client&quot;: &quot;wes&quot;}' \
+  '{&quot;everything&quot;: true}' \
+  'query:data' 'ingest:data' 'ingest:reference_material' 'delete:reference_material'
+</code></pre>
+<h3 id="c-create-a-grant-for-the-aggregation-and-beacon-services">c. Create a grant for the aggregation and Beacon services</h3>
+<p>Run the following commands to set up authorization for the aggregation/Beacon client.
+<strong>Don't forget to replace <code>&lt;ISSUER_HERE&gt;</code> with the issuer URL!</strong></p>
+<pre><code class="language-bash"># In the future, view:private_portal will need to be removed from this grant.
+bento_authz create grant \
+  '{&quot;iss&quot;: &quot;&lt;ISSUER_HERE&gt;&quot;, &quot;client&quot;: &quot;aggregation&quot;}' \
+  '{&quot;everything&quot;: true}' \
+  'query:data' 'view:private_portal'
+</code></pre>
+<h3 id="d-configure-public-data-access-for-all-users-including-anonymous-visitors-if-desired">d. Configure public data access for all users, including anonymous visitors (if desired):</h3>
+<p>To configure public data access, run the following command in the authorization service container. Note that with the
+<code>full</code> value, <strong>THIS GIVES FULL DATA ACCESS TO EVERYONE WHO VISITS YOUR INSTANCE!</strong></p>
+<pre><code class="language-bash"># Configure public data access
+# ----------------------------
+# The level below (&quot;counts&quot;) preserves previous functionality. Other possible options are:
+#  - none - will do nothing.
+#  - bool - for censored true/false discovery, but in effect right now forbids access.
+#  - counts - for censored count discovery.
+#  - full - allows full data access (record-level, including sensitive data such as IDs), uncensored counts, etc.
+bento_authz public-data-access counts
+</code></pre>
+<h3 id="e-assign-portal-access-to-all-users-in-the-instance-realm">e. Assign portal access to all users in the instance realm</h3>
+<p>We added a special permission, <code>view:private_portal</code>, to Bento v12/v13 in order to carry forward the current
+'legacy' authorization behaviour for one more major version. This permission currently behaves as a super-permission,
+allowing all actions within the private portal. <strong>However,</strong> in the future, this permission will do almost <em>nothing.</em></p>
+<p>To carry forward legacy behaviour of all users in the instance realm being able to do everything, run the following
+command in the authorization service container:</p>
+<pre><code class="language-bash"># Create the grant
+bento_authz create grant \
+  '{&quot;iss&quot;: &quot;ISSUER_HERE&quot;, &quot;client&quot;: &quot;WEB_CLIENT_ID_HERE&quot;}' \
+  '{&quot;everything&quot;: true}' \
+  'view:private_portal'
+</code></pre>
+<p>Where <code>WEB_CLIENT_ID_HERE</code> is the OAuth2 client the web portal uses, i.e., the
+value in the <code>BENTOV2_AUTH_CLIENT_ID</code> environment variable. On local instances,
+this is set to <code>local_bentov2</code> by default.</p>
+<h2 id="7-production-only-set-up-translations-and-branding">7. <em>Production only:</em> set up translations and branding</h2>
+<p>Now that Bento Public and Web have been initialized by either <code>./bentoctl.bash init-all</code> or
+<code>./bentoctl.bash init-web &lt;public|web&gt;</code>, translation files and branding (logos) can be configured as necessary.</p>
+<p><strong>For branding (logos)</strong>, copy files to the following paths:</p>
+<ul>
+<li>A logo which works on dark backgrounds should be placed at <code>lib/public/branding.png</code> and <code>lib/web/branding.png</code>.</li>
+<li>A logo which works on light backgrounds should be placed at <code>lib/public/branding.lightbg.png</code>. This is primarily
+  useful for Beacon Network.</li>
+</ul>
+<p><strong>For translations</strong> (which apply only to Bento Public), adjust the default translation set as necessary:</p>
+<pre><code class="language-js">// lib/public/translations/&lt;en|fr&gt;.json
+
+{
+  &quot;Age&quot;: &quot;Age&quot;,
+  &quot;Sex&quot;: &quot;Sex&quot;,
+  &quot;Verbal consent date&quot;: &quot;Verbal Consent Date&quot;,
+  &quot;Functional status&quot;: &quot;Functional Status&quot;,
+  &quot;Lab Test Result&quot;: &quot;Lab Test Results&quot;,
+  &quot;Experiment Types&quot;: &quot;Experiment Types&quot;,
+  &quot;Demographics&quot;: &quot;Demographics&quot;,
+  &quot;MALE&quot;: &quot;MALE&quot;,
+  &quot;FEMALE&quot;: &quot;FEMALE&quot;,
+  &quot;I have no problems in walking about&quot;: &quot;I have no problems in walking about&quot;,
+  &quot;Results&quot;: &quot;Results&quot;
+}
+
+
+{
+  &quot;MALE&quot;: &quot;HOMME&quot;,
+  &quot;FEMALE&quot;: &quot;FEMME&quot;,
+  &quot;Age&quot;: &quot;Âge&quot;,
+  &quot;Sex&quot;: &quot;Sexe&quot;,
+  &quot;Demographics&quot;: &quot;Démographie&quot;,
+  &quot;Verbal consent date&quot;: &quot;Date de consentement verbal&quot;,
+  &quot;Functional status&quot;: &quot;Statut fonctionnel&quot;,
+  &quot;Lab Test Result&quot;: &quot;Résultats des tests de laboratoire&quot;,
+  &quot;Experiment Types&quot;: &quot;Types d'expériences&quot;,
+  &quot;I have no problems in walking about&quot;: &quot;Je n’ai aucun problème à marcher&quot;,
+  &quot;Results&quot;: &quot;Résultats&quot;
+}
+</code></pre>
+<h2 id="8-start-the-cluster">8. Start the cluster</h2>
+<pre><code class="language-bash">./bentoctl.bash run all
+# or
+./bentoctl.bash run
+# (these are synonymous)
+</code></pre>
+<p>to run all Bento services.</p>
+<h3 id="stopping-and-cleaning-the-cluster">Stopping and cleaning the cluster</h3>
+<p>Run</p>
+<pre><code class="language-bash">./bentoctl.bash stop all
+</code></pre>
+<p>to shut down the whole cluster.</p>
+<p>To remove the Docker containers, run the following:</p>
+<pre><code class="language-bash">./bentoctl.bash clean all
+</code></pre>
+<blockquote>
+<p>NOTE: application data does persist after cleaning
+(depending on data path, e.g., <code>./data/[auth, drs, katsu]/...</code> directories)</p>
+</blockquote>
+<h2 id="9-ingest-reference-material">9. Ingest reference material</h2>
+<p>To support genomic data and gene querying, a reference genome (FASTA) and GFF3 gene catalog must be ingested.
+Follow these steps:</p>
+<ol>
+<li>Download your reference genome and GFF3 gene catalog files from RefSeq or a similar database.</li>
+<li>Upload these files to your Bento instance's drop box.</li>
+<li>Have a Phenopackets JSON-style ontology term (from the
+   <a href="https://github.com/obophenotype/ncbitaxon"><code>NCBITaxon</code> ontology</a>) ready, e.g.:
+   <code>json
+   { "id": "NCBITaxon:9606", "label": "Homo sapiens" }</code></li>
+<li>Navigate to <code>/data/manager/ingestion</code> in the Bento private portal and ingest the reference FASTA and GFF3 into the
+   reference service. This will take some time.</li>
+</ol>
+<h3 id="set-up-gohans-gene-catalogue-legacy-instructions">Set Up Gohan's Gene Catalogue (<em>Legacy instructions</em>)</h3>
+<p>To enable gene querying support in versions of Bento before v16, follow these steps to set up Gohan's gene catalogue:</p>
+<ol>
+<li>
+<p><strong>Access the Services Portal</strong>:</p>
+</li>
+<li>
+<p>Navigate to the <code>Services</code> tab on the portal.</p>
+</li>
+<li>
+<p><strong>Initiate Gohan Request</strong>:</p>
+</li>
+<li>
+<p>Click the <code>Make Request</code> button for Gohan.</p>
+</li>
+<li>
+<p><strong>Edit and Trigger Ingestion Endpoint</strong>:</p>
+</li>
+<li>
+<p>Modify the endpoint to <code>genes/ingestion/run</code>.</p>
+</li>
+<li>
+<p>Click <code>Get</code> to initiate Gohan's download and processing of the default GenCode <code>.gtk</code> files from the internet.</p>
+</li>
+<li>
+<p><strong>Monitor the Ingestion Process</strong>:</p>
+</li>
+<li>
+<p>Use the endpoint <code>genes/ingestion/requests</code> to track the progress of the ingestion process.</p>
+</li>
+<li>
+<p><strong>Access the Gene Catalogue</strong>:</p>
+</li>
+<li>Once the ingestion process is complete, the gene catalogue will be available at <code>genes/overview</code>.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

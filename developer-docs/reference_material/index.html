@@ -1,0 +1,1297 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bento-platform.github.io/bento-docs/developer-docs/reference_material/">
+      
+      
+        <link rel="prev" href="../public_discovery/">
+      
+      
+        <link rel="next" href="../reverse-proxy/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Guide to genomic reference material in Bento - Bento Documentation -- Dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guide-to-genomic-reference-material-in-bento" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bento Documentation -- Dev" class="md-header__button md-logo" aria-label="Bento Documentation -- Dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bento Documentation -- Dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guide to genomic reference material in Bento
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bento-platform/bento-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bento Documentation -- Dev" class="md-nav__button md-logo" aria-label="Bento Documentation -- Dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bento Documentation -- Dev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bento-platform/bento-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adding-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding services to Bento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bentoctl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    bentoctl: the Bento deployment command line management tool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Bento with Dev-containers in VS Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Schemas for data types and discovery configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../minio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento MinIO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phenopackets_v1_to_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Converting Phenopackets from V1 to V2 using bentoctl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../public_discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Public data discovery configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Guide to genomic reference material in Bento
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guide to genomic reference material in Bento
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-reference-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a reference genome?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-representation-of-reference-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      File representation of reference genomes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-reference-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common reference genomes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common reference genomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#human" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polar-bear" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polar bear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aspects-to-pay-attention-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aspects to pay attention to!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reverse-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento behind a proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting Bento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Migration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            Migration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v14
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_15_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_15_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v16
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v17
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_17_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v17.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v18
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v19
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/migrating_to_2_11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to BentoV2 2.11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-reference-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a reference genome?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-representation-of-reference-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      File representation of reference genomes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-reference-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common reference genomes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common reference genomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#human" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polar-bear" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polar bear
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aspects-to-pay-attention-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aspects to pay attention to!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="guide-to-genomic-reference-material-in-bento">Guide to genomic reference material in Bento</h1>
+<p>This document includes a bit of information on what a reference genome is, what some common ones for Bento projects are,
+and some subtleties that are <strong>important to pay attention to.</strong></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#what-is-a-reference-genome">What is a reference genome?</a></li>
+<li><a href="#file-representation-of-reference-genomes">File representation of reference genomes</a></li>
+<li><a href="#common-reference-genomes">Common reference genomes</a></li>
+<li><a href="#aspects-to-pay-attention-to">Aspects to pay attention to!</a></li>
+</ul>
+<h2 id="what-is-a-reference-genome">What is a reference genome?</h2>
+<p>Organisms of the same species share the vast majority of their DNA sequence, with variation in phenotype (appearance, 
+behaviour, disease susceptibility, etc.) being to a large extent the result of variation in specific loci (regions)
+of the individuals' genome.</p>
+<p>As a result, bioinformatics file formats often (but not always!) use a common set of sequences called a 
+"reference genome", and data is associated with a particular chromosome and position within this genome.</p>
+<p>As an example, one reference genome for humans is called "hg38"/"GRCh38". Human individuals usually have 46 chromosomes:
+22 pairs of autosomes, and 1 pair of sex chromosomes (n = (22 + 1); 2n = 46 - see Figure 1). One copy of each chromosome
+is inherited from an individual's mother, the other from their father. The <code>hg38</code> reference genome has 24 main genomic 
+sequences: <code>chr1</code>-<code>chr22</code> + <code>chrX</code> + <code>chrY</code> (Table 1); we don't need pairs here, since the pairs are extremely similar
+to one another; any variation between them can (usually) be well-represented </p>
+<blockquote>
+<p><img alt="A karyotype of a human male" src="https://upload.wikimedia.org/wikipedia/commons/2/21/DNA_human_male_chromosomes.gif" /></p>
+<p>Figure 1: A karyotype of a human male with a normal chromosome configuration.</p>
+<table>
+<thead>
+<tr>
+<th>hg38 chromosome</th>
+<th>length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chr1</td>
+<td>248956422</td>
+</tr>
+<tr>
+<td>chr2</td>
+<td>242193529</td>
+</tr>
+<tr>
+<td>chr3</td>
+<td>198295559</td>
+</tr>
+<tr>
+<td>chr4</td>
+<td>190214555</td>
+</tr>
+<tr>
+<td>chr5</td>
+<td>181538259</td>
+</tr>
+<tr>
+<td>chr6</td>
+<td>170805979</td>
+</tr>
+<tr>
+<td>chr7</td>
+<td>159345973</td>
+</tr>
+<tr>
+<td>chr8</td>
+<td>145138636</td>
+</tr>
+<tr>
+<td>chr9</td>
+<td>138394717</td>
+</tr>
+<tr>
+<td>chr10</td>
+<td>133797422</td>
+</tr>
+<tr>
+<td>chr11</td>
+<td>135086622</td>
+</tr>
+<tr>
+<td>chr12</td>
+<td>133275309</td>
+</tr>
+<tr>
+<td>chr13</td>
+<td>114364328</td>
+</tr>
+<tr>
+<td>chr14</td>
+<td>107043718</td>
+</tr>
+<tr>
+<td>chr15</td>
+<td>101991189</td>
+</tr>
+<tr>
+<td>chr16</td>
+<td>90338345</td>
+</tr>
+<tr>
+<td>chr17</td>
+<td>83257441</td>
+</tr>
+<tr>
+<td>chr18</td>
+<td>80373285</td>
+</tr>
+<tr>
+<td>chr19</td>
+<td>58617616</td>
+</tr>
+<tr>
+<td>chr20</td>
+<td>64444167</td>
+</tr>
+<tr>
+<td>chr21</td>
+<td>46709983</td>
+</tr>
+<tr>
+<td>chr22</td>
+<td>50818468</td>
+</tr>
+<tr>
+<td>chrX</td>
+<td>156040895</td>
+</tr>
+<tr>
+<td>chrY</td>
+<td>57227415</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1: <code>hg38</code> reference genome chromosome lengths.</p>
+</blockquote>
+<p>It's worth noting that the nuclear genome, i.e., what is described above, is not the only genome in human cells.
+Humans also have <a href="https://en.wikipedia.org/wiki/Mitochondrion">mitochrondria</a>, which have their own circular genome. 
+This genome, sometimes represented as <code>chrMT</code> in reference genome files, is 16569 bp long in humans.</p>
+<h2 id="file-representation-of-reference-genomes">File representation of reference genomes</h2>
+<p>Reference genomes are usually represented using the <a href="https://en.wikipedia.org/wiki/FASTA_format">FASTA file format</a>.</p>
+<p>Our own <a href="https://github.com/bento-platform/bento_reference_service">Bento reference service</a> ingests FASTA files, and
+does all operations using the FASTA format + an index file.</p>
+<h2 id="common-reference-genomes">Common reference genomes</h2>
+<p>Here are some common reference genomes, and which Bento projects use them.</p>
+<h3 id="human">Human</h3>
+<ul>
+<li><code>CHM13v2.0</code>: The "latest and greatest"; a more contiguous reference with several gaps filled in. This genome will be
+  used in more projects going forward.</li>
+<li><code>hg38</code>/<code>GRCh38</code>: </li>
+<li>BQC19: The CVMFS version on Alliance clusters at 
+    <code>/cvmfs/soft.mugqic/CentOS6/genomes/species/Homo_sapiens.GRCh38/genome/Homo_sapiens.GRCh38.fa</code></li>
+<li><code>hg19</code>/<code>GRCh37</code>/<code>hs37d5</code>:</li>
+<li>ICHANGE: The special <code>hs37d5</code> version derived from <code>GRCh37</code> is the 1000 Genomes Phase 2 reference genome.
+    It is on Alliance clusters at 
+    <code>/lustre03/project/6007512/C3G/analyste_dev/genomes/species/Homo_sapiens.hs37d5/genome/Homo_sapiens.hs37d5.fa</code>.</li>
+</ul>
+<h3 id="mouse">Mouse</h3>
+<ul>
+<li><code>mm10</code>/<code>GRCm38</code>: an older mouse (<em>Mus musculus</em>) reference genome.</li>
+<li>ICHANGE: The CVMFS version on Alliance clusters at 
+    <code>/cvmfs/soft.mugqic/CentOS6/genomes/species/Mus_musculus.GRCm38/genome/Mus_musculus.GRCm38.fa</code> </li>
+</ul>
+<h3 id="polar-bear">Polar bear</h3>
+<ul>
+<li><code>UrsMar_1.0</code>: Used by BearWatch; available from https://www.ncbi.nlm.nih.gov/assembly/GCF_000687225.1/.</li>
+</ul>
+<h2 id="aspects-to-pay-attention-to">Aspects to pay attention to!</h2>
+<ul>
+<li>There can be many different versions of the same base reference genome - for example, ICHANGE specifically uses the
+  <code>hs37d5</code> version of <code>GRCh37</code>, which <strong>DOES NOT</strong> have <code>chr</code> prefixes for the chromosomes, i.e., chromosome 1 is 
+  represented as <code>1</code> instead of <code>chr1</code>. It is important to check which specific version is used!</li>
+</ul>
+<p>VCFs can be queried to find evidence for which reference genome was used:</p>
+<p><code>bash
+  bcftools view -h ./path/to/the.vcf.gz</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1190 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bento-platform.github.io/bento-docs/developer-docs/migration/migrating_to_16/">
+      
+      
+        <link rel="prev" href="../migrating_to_15_2/">
+      
+      
+        <link rel="next" href="../migrating_to_17/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Migrating to Bento v16 - Bento Documentation -- Dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#migrating-to-bento-v16" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bento Documentation -- Dev" class="md-header__button md-logo" aria-label="Bento Documentation -- Dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bento Documentation -- Dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Migrating to Bento v16
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bento-platform/bento-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bento Documentation -- Dev" class="md-nav__button md-logo" aria-label="Bento Documentation -- Dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bento Documentation -- Dev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bento-platform/bento-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adding-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding services to Bento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bentoctl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    bentoctl: the Bento deployment command line management tool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Bento with Dev-containers in VS Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../json-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSON Schemas for data types and discovery configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento MinIO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phenopackets_v1_to_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Converting Phenopackets from V1 to V2 using bentoctl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../public_discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Public data discovery configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference_material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guide to genomic reference material in Bento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reverse-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bento behind a proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting Bento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Migration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            Migration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v12
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v13
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v14
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_15_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_15_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v15.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v16
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v16
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-run-reference-service-pre-migration-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Run reference service pre-migration step
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-stop-bento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Stop Bento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pre-update-data-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pre-update data config
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-update-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Update images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-create-new-docker-volume-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Create new Docker volume directories
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-migrate-data-from-old-bentov2_root_data_dir-location-to-bento_fast_data_dirbento_slow_data_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Migrate data from old BENTOV2_ROOT_DATA_DIR location to BENTO_FAST_DATA_DIR/BENTO_SLOW_DATA_DIR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-restart-bento" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Restart Bento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-if-needed-ingest-gene-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. If needed, ingest gene features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v17
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_17_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v17.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v18
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to Bento v19
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating_to_2_11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrating to BentoV2 2.11
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-run-reference-service-pre-migration-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Run reference service pre-migration step
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-stop-bento" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Stop Bento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pre-update-data-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pre-update data config
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-update-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Update images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-create-new-docker-volume-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Create new Docker volume directories
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-migrate-data-from-old-bentov2_root_data_dir-location-to-bento_fast_data_dirbento_slow_data_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Migrate data from old BENTOV2_ROOT_DATA_DIR location to BENTO_FAST_DATA_DIR/BENTO_SLOW_DATA_DIR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-restart-bento" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Restart Bento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-if-needed-ingest-gene-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. If needed, ingest gene features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="migrating-to-bento-v16">Migrating to Bento v16</h1>
+<p>Key points:</p>
+<ul>
+<li>Bento v16 may now use 2 data directories for better resource usage in production.</li>
+<li>The environment variable <code>BENTOV2_ROOT_DATA_DIR</code> was replaced with:<ul>
+<li><code>BENTO_FAST_DATA_DIR</code> for SSD mounts</li>
+<li><code>BENTO_SLOW_DATA_DIR</code> for HDD mounts</li>
+</ul>
+</li>
+<li>By default, <code>Drop-Box</code> and <code>DRS</code> are now configured to use <code>BENTO_SLOW_DATA_DIR</code> as their data directory.
+    All other services use <code>BENTO_FAST_DATA_DIR</code>.</li>
+<li>If needed, the default service specific volume directories defined in <code>bento.env</code> can be overriden in your
+    <code>local.env</code>.</li>
+<li>The WES schema has been updated, so the run database must be cleared.</li>
+<li>The reference service has been updated, so an SQL migration must be run.</li>
+<li>The reference service now supports GFF3 (gene feature annotation) files, and the private portal has moved to using
+  this service to provide gene information for searching and track visualization. <strong>All annotations required should be
+  ingested/attached to the reference genome.</strong></li>
+<li>Docker requirements for deployment have changed.</li>
+<li>Docker &gt;= 24.0.4</li>
+<li>Docker Compose &gt;= 2.20.0 (plugin)</li>
+<li>Update the versions on the host machine accordingly</li>
+</ul>
+<h2 id="1-run-reference-service-pre-migration-step">1. Run reference service pre-migration step</h2>
+<pre><code class="language-bash">./bentoctl.bash shell reference-db
+PGPASSWORD=&quot;${POSTGRES_PASSWORD}&quot;
+psql --user &quot;${POSTGRES_USER}&quot; reference
+</code></pre>
+<p>Then, begin a transaction:</p>
+<pre><code class="language-sql">BEGIN TRANSACTION;
+</code></pre>
+<p>Then, paste the contents of
+<a href="https://github.com/bento-platform/bento_reference_service/blob/main/bento_reference_service/sql/migrate_v0_2.sql">migrate_v0_2.sql</a>
+from the reference service repository into the SQL command line.</p>
+<p>Next, commit the results of the transaction:</p>
+<pre><code class="language-sql">COMMIT;
+</code></pre>
+<p>Finally, exit the shell (via successive <code>^D</code>).</p>
+<h2 id="2-stop-bento">2. Stop Bento</h2>
+<pre><code class="language-bash">./bentoctl.bash stop
+</code></pre>
+<h2 id="3-pre-update-data-config">3. Pre-update data config</h2>
+<p>Before updating, perform the following steps:</p>
+<ul>
+<li>Shut down Bento with <code>./bentoctl.bash stop</code></li>
+<li>In <code>local.env</code>, replace <code>BENTOV2_ROOT_DATA_DIR</code> with <code>BENTO_FAST_DATA_DIR</code> and <code>BENTO_SLOW_DATA_DIR</code></li>
+</ul>
+<p>To minimize side effects in local environments, we recommend that you use the same directory as before for both new
+variables.</p>
+<pre><code class="language-bash"># local.env
+
+# Old
+BENTOV2_ROOT_DATA_DIR=some_dir
+
+# Recommended new variables
+BENTO_FAST_DATA_DIR=some_dir
+BENTO_SLOW_DATA_DIR=some_dir
+</code></pre>
+<p><em>IMPORTANT:</em> If you decide to split the data in distinct directories, <strong>make sure to migrate the data accordingly</strong>.</p>
+<h2 id="4-update-images">4. Update images</h2>
+<pre><code class="language-bash">./bentoctl.bash pull
+</code></pre>
+<h2 id="5-create-new-docker-volume-directories">5. Create new Docker volume directories</h2>
+<pre><code class="language-bash">./bentoctl.bash init-dirs  # new volume directory for DRS and Reference temporary files
+</code></pre>
+<h2 id="6-migrate-data-from-old-bentov2_root_data_dir-location-to-bento_fast_data_dirbento_slow_data_dir">6. Migrate data from old <code>BENTOV2_ROOT_DATA_DIR</code> location to <code>BENTO_FAST_DATA_DIR</code>/<code>BENTO_SLOW_DATA_DIR</code></h2>
+<p>This is only needed if the data was split into distinct directories in part 1. All service data should be copied into
+the corresponding locations as specified in <code>etc/bento.env</code>.</p>
+<h2 id="7-restart-bento">7. Restart Bento</h2>
+<pre><code class="language-bash">./bentoctl.bash start
+</code></pre>
+<h2 id="8-if-needed-ingest-gene-features">8. If needed, ingest gene features</h2>
+<p>Use the ingestion workflows now provided by the reference service to either ingest a reference genome FASTA with a
+corresponding GFF3 file, or ingest a GFF3 file to attach to an existing reference genome.</p>
+<p><strong>Do this if the instance was previously using the Gohan gene catalog.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
