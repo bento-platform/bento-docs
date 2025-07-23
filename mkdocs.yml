@@ -11,6 +11,10 @@ theme:
   palette:
     primary: custom
 
+  features:
+    - search.suggest
+    - search.highlight
+
 extra_css:
   - stylesheets/extra.css
 
