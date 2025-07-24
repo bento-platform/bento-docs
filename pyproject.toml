@@ -4,11 +4,13 @@ version = "0.1.0"
 description = ""
 authors = ["SanjeevLakhwani <lakhwani.sanjeev691@gmail.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.8.1"
 mkdocs-material = "^9.6.15"
 mike = "^2.1.3"
+mkdocs-awesome-pages-plugin = "^2.10.1"
 
 
 [build-system]
