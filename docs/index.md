@@ -1,39 +1,7 @@
-# Bento Docs
+# Bento Documentation
 
-This repository hosts the versioned documentation for the **Bento** portal, built with [MkDocs](https://www.mkdocs.org/) and [Mike](https://github.com/jimporter/mike), and deployed to GitHub Pages.
+## Coming Soon
 
-## Installation
+This section of the documentation is currently being prepared. Please check back later.
 
-Install dependencies with uv:
-
-```bash
-uv sync
-```
-
-## Local Development
-
-Preview the docs with live reload:
-
-```bash
-uv run mkdocs serve
-```
-
-Build the static site:
-
-```bash
-uv run mkdocs build --strict
-```
-
-## Deployment
-
-Manual deploy with Mike:
-
-```bash
-mike deploy <version> --push            # deploys docs under /<version>/ on gh-pages
-mike alias <version> latest --update-aliases --push  # update the latest alias
-```
-
-## CI/CD
-
-- **Release deploy**: GitHub Actions workflow (`.github/workflows/deploy-docs.yml`) runs on GitHub Release to deploy the tagged version and update `latest`.
-- **Docs build & test**: CI workflow (`.github/workflows/ci.yml`) on push/PR builds docs (`mkdocs build --strict`) and runs tests.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
