@@ -4,16 +4,10 @@ This repository hosts the versioned documentation for the **Bento** portal, buil
 
 ## Installation
 
-Install dependencies with Poetry:
+Install dependencies with uv:
 
 ```bash
-poetry install
-```
-
-(Optional) Activate the Poetry shell:
-
-```bash
-poetry shell
+uv sync
 ```
 
 ## Local Development
@@ -21,13 +15,13 @@ poetry shell
 Preview the docs with live reload:
 
 ```bash
-mkdocs serve
+uv run mkdocs serve
 ```
 
 Build the static site:
 
 ```bash
-mkdocs build --strict
+uv run mkdocs build --strict
 ```
 
 ## Deployment
