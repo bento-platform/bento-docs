@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bento-docs" class="md-skip">
+        <a href="#bento-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bento Docs
+              Bento Documentation
             
           </span>
         </div>
@@ -246,7 +246,7 @@
   <span class="md-ellipsis">
     
   
-    Bento Docs
+    Bento Documentation
   
 
     
@@ -264,7 +264,7 @@
   <span class="md-ellipsis">
     
   
-    Bento Docs
+    Bento Documentation
   
 
     
@@ -290,43 +290,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#coming-soon" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local Development
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cicd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CI/CD
+        Coming Soon
       
     </span>
   </a>
@@ -1136,43 +1103,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#coming-soon" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local Development
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cicd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CI/CD
+        Coming Soon
       
     </span>
   </a>
@@ -1199,29 +1133,10 @@
   
 
 
-<h1 id="bento-docs">Bento Docs</h1>
-<p>This repository hosts the versioned documentation for the <strong>Bento</strong> portal, built with <a href="https://www.mkdocs.org/">MkDocs</a> and <a href="https://github.com/jimporter/mike">Mike</a>, and deployed to GitHub Pages.</p>
-<h2 id="installation">Installation</h2>
-<p>Install dependencies with uv:</p>
-<pre><code class="language-bash">uv sync
-</code></pre>
-<h2 id="local-development">Local Development</h2>
-<p>Preview the docs with live reload:</p>
-<pre><code class="language-bash">uv run mkdocs serve
-</code></pre>
-<p>Build the static site:</p>
-<pre><code class="language-bash">uv run mkdocs build --strict
-</code></pre>
-<h2 id="deployment">Deployment</h2>
-<p>Manual deploy with Mike:</p>
-<pre><code class="language-bash">mike deploy &lt;version&gt; --push            # deploys docs under /&lt;version&gt;/ on gh-pages
-mike alias &lt;version&gt; latest --update-aliases --push  # update the latest alias
-</code></pre>
-<h2 id="cicd">CI/CD</h2>
-<ul>
-<li><strong>Release deploy</strong>: GitHub Actions workflow (<code>.github/workflows/deploy-docs.yml</code>) runs on GitHub Release to deploy the tagged version and update <code>latest</code>.</li>
-<li><strong>Docs build &amp; test</strong>: CI workflow (<code>.github/workflows/ci.yml</code>) on push/PR builds docs (<code>mkdocs build --strict</code>) and runs tests.</li>
-</ul>
+<h1 id="bento-documentation">Bento Documentation</h1>
+<h2 id="coming-soon">Coming Soon</h2>
+<p>This section of the documentation is currently being prepared. Please check back later.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 
 
