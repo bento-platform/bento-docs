@@ -1,9 +1,14 @@
 [
   {
-    "version": "developer-docs",
-    "title": "developer-docs",
+    "version": "main",
+    "title": "main",
     "aliases": [
       "latest"
     ]
+  },
+  {
+    "version": "developer-docs",
+    "title": "developer-docs",
+    "aliases": []
   }
 ]
