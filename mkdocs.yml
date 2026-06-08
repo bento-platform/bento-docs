@@ -18,6 +18,7 @@ theme:
 extra:
   version:
     provider: mike
+  generator: false
 
 extra_css:
   - stylesheets/extra.css
